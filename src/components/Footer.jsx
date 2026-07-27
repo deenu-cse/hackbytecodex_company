@@ -80,16 +80,8 @@ const Footer = () => {
                     <div className="md:col-span-5">
                         <Link href="/" className="inline-flex items-center gap-3 group mb-5">
                             <div
-                                className="w-10 h-10 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
-                                style={{
-                                    background: 'linear-gradient(145deg, rgba(192,132,252,0.2), rgba(232,255,71,0.1))',
-                                    border: '1px solid rgba(192,132,252,0.25)',
-                                }}
-                            >
-                                <svg width="18" height="18" viewBox="0 0 44 44" fill="none">
-                                    <path d="M14 8L30 16L22 32L6 24L14 8Z" fill="#C084FC" />
-                                    <path d="M22 4L38 12L30 28L14 20L22 4Z" fill="#A855F7" opacity="0.8" />
-                                </svg>
+                                className="w-10 h-10 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                                <img src='/logo.png' alt="logo" className='rounded-full' />
                             </div>
                             <span className="font-['Space_Grotesk'] font-black text-white text-lg tracking-tight">
                                 HacByte<span style={{ color: '#E8FF47' }}>Codex</span>
@@ -100,7 +92,6 @@ const Footer = () => {
                             Full-stack digital studio building web apps, mobile apps & secure government-grade software. From MVP to production — shipped in weeks, not months.
                         </p>
 
-                        {/* CTA mini button */}
                         <Link
                             href="/contact"
                             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold text-black transition-all duration-300 hover:scale-105"

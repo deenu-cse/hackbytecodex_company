@@ -29,11 +29,6 @@ const HeroSection = () => {
         };
     }, []);
 
-    // NOTE: Removed the mousemove parallax handler entirely.
-    // It was doing document.querySelectorAll + direct style.transform on every mouse move,
-    // which conflicted with the CSS float animations and caused heavy layout thrashing.
-    // The float animations alone provide enough motion.
-
     return (
         <section
             ref={heroRef}
@@ -87,9 +82,22 @@ const HeroSection = () => {
                                 {/* Card 1: Web Dev */}
                                 <div className="w-full p-2">
                                     <div className="rounded-2xl p-4 mb-3 bg-[#C084FC]">
-                                        <div className="w-full h-36 rounded-xl bg-white/20 flex items-center justify-center mb-3">
-                                            <svg className="w-16 h-16 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        <div className="w-full h-36 rounded-xl bg-white/10 flex items-center justify-center mb-3 overflow-hidden">
+                                            <svg viewBox="0 0 200 140" className="w-full h-full">
+                                                <rect x="20" y="14" width="160" height="100" rx="8" fill="rgba(255,255,255,0.12)" />
+                                                <rect x="20" y="14" width="160" height="20" rx="8" fill="rgba(255,255,255,0.2)" />
+                                                <circle cx="32" cy="24" r="3" fill="rgba(255,255,255,0.5)" />
+                                                <circle cx="42" cy="24" r="3" fill="rgba(255,255,255,0.5)" />
+                                                <circle cx="52" cy="24" r="3" fill="rgba(255,255,255,0.5)" />
+                                                <rect x="32" y="46" width="60" height="8" rx="4" fill="rgba(255,255,255,0.5)" />
+                                                <rect x="32" y="60" width="90" height="6" rx="3" fill="rgba(255,255,255,0.3)" />
+                                                <rect x="32" y="72" width="70" height="6" rx="3" fill="rgba(255,255,255,0.3)" />
+                                                <rect x="32" y="88" width="40" height="14" rx="7" fill="#0A0A0A" />
+                                                <text x="52" y="98" fontSize="9" fill="#E8FF47" fontFamily="monospace" textAnchor="middle">&lt;/&gt;</text>
+                                                <rect x="120" y="46" width="42" height="52" rx="6" fill="rgba(255,255,255,0.15)" />
+                                                <rect x="126" y="52" width="30" height="4" rx="2" fill="rgba(255,255,255,0.4)" />
+                                                <rect x="126" y="60" width="30" height="18" rx="3" fill="rgba(255,255,255,0.25)" />
+                                                <rect x="126" y="82" width="20" height="4" rx="2" fill="rgba(255,255,255,0.4)" />
                                             </svg>
                                         </div>
                                         <p className="text-white text-sm font-bold">Web Development</p>
@@ -99,9 +107,20 @@ const HeroSection = () => {
                                 {/* Card 2: App Dev */}
                                 <div className="w-full p-2">
                                     <div className="rounded-2xl p-4 mb-3 bg-[#E8FF47] text-[#0A0A0A]">
-                                        <div className="w-full h-36 rounded-xl bg-black/10 flex items-center justify-center mb-3">
-                                            <svg className="w-16 h-16 text-black/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                        <div className="w-full h-36 rounded-xl bg-black/5 flex items-center justify-center mb-3 overflow-hidden">
+                                            <svg viewBox="0 0 200 140" className="w-full h-full">
+                                                <rect x="66" y="10" width="68" height="120" rx="14" fill="rgba(0,0,0,0.08)" />
+                                                <rect x="66" y="10" width="68" height="120" rx="14" fill="none" stroke="rgba(0,0,0,0.25)" strokeWidth="2" />
+                                                <rect x="93" y="16" width="14" height="3" rx="1.5" fill="rgba(0,0,0,0.3)" />
+                                                <rect x="76" y="30" width="20" height="20" rx="5" fill="#0A0A0A" />
+                                                <rect x="104" y="30" width="20" height="20" rx="5" fill="rgba(0,0,0,0.35)" />
+                                                <rect x="76" y="56" width="20" height="20" rx="5" fill="rgba(0,0,0,0.2)" />
+                                                <rect x="104" y="56" width="20" height="20" rx="5" fill="rgba(0,0,0,0.35)" />
+                                                <rect x="76" y="82" width="48" height="10" rx="5" fill="rgba(0,0,0,0.15)" />
+                                                <circle cx="150" cy="40" r="16" fill="rgba(0,0,0,0.08)" />
+                                                <path d="M144 40l4 4 8-8" stroke="#0A0A0A" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                                                <circle cx="40" cy="90" r="14" fill="rgba(0,0,0,0.06)" />
+                                                <path d="M35 90h10M40 85v10" stroke="rgba(0,0,0,0.4)" strokeWidth="2.5" strokeLinecap="round" />
                                             </svg>
                                         </div>
                                         <p className="text-sm font-bold">App Development</p>
@@ -111,9 +130,13 @@ const HeroSection = () => {
                                 {/* Card 3: Deployment */}
                                 <div className="w-full p-2">
                                     <div className="rounded-2xl p-4 mb-3 bg-zinc-800">
-                                        <div className="w-full h-36 rounded-xl bg-white/10 flex items-center justify-center mb-3">
-                                            <svg className="w-16 h-16 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                                        <div className="w-full h-36 rounded-xl bg-white/5 flex items-center justify-center mb-3 overflow-hidden">
+                                            <svg viewBox="0 0 200 140" className="w-full h-full">
+                                                <ellipse cx="100" cy="112" rx="60" ry="10" fill="rgba(192,132,252,0.15)" />
+                                                <path d="M70 118c-16 0-26-12-26-24 0-13 10-23 22-24 4-14 17-24 32-24 18 0 32 13 34 30 12 1 20 10 20 20 0 12-10 22-24 22H70z" fill="rgba(255,255,255,0.08)" />
+                                                <path d="M100 96V44M100 44l-14 14M100 44l14 14" stroke="#E8FF47" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                                                <path d="M84 108l-10 18M116 108l10 18M100 112v16" stroke="rgba(192,132,252,0.6)" strokeWidth="2.5" strokeLinecap="round" />
+                                                <circle cx="100" cy="30" r="5" fill="#C084FC" />
                                             </svg>
                                         </div>
                                         <p className="text-white text-sm font-bold">Deployment</p>
@@ -123,10 +146,16 @@ const HeroSection = () => {
                                 {/* Card 4: Maintenance */}
                                 <div className="w-full p-2">
                                     <div className="rounded-2xl p-4 mb-3 bg-[#C084FC]">
-                                        <div className="w-full h-36 rounded-xl bg-white/20 flex items-center justify-center mb-3">
-                                            <svg className="w-16 h-16 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <div className="w-full h-36 rounded-xl bg-white/10 flex items-center justify-center mb-3 overflow-hidden">
+                                            <svg viewBox="0 0 200 140" className="w-full h-full">
+                                                <circle cx="80" cy="70" r="34" fill="rgba(255,255,255,0.1)" />
+                                                <g stroke="rgba(255,255,255,0.7)" strokeWidth="6" strokeLinecap="round">
+                                                    <path d="M80 40v10M80 90v10M50 70h10M100 70h10M58 48l7 7M95 85l7 7M102 48l-7 7M65 85l-7 7" />
+                                                </g>
+                                                <circle cx="80" cy="70" r="12" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="5" />
+                                                <path d="M140 42a26 26 0 100 52 26 26 0 000-52z" fill="rgba(255,255,255,0.08)" />
+                                                <path d="M140 54v14l10 6" stroke="#E8FF47" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                                                <path d="M126 96l30-30" stroke="rgba(255,255,255,0.4)" strokeWidth="3" strokeLinecap="round" />
                                             </svg>
                                         </div>
                                         <p className="text-white text-sm font-bold">Maintenance</p>
