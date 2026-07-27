@@ -8,8 +8,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* --font-sans: var(--font-geist-sans); */
+  /* --font-mono: var(--font-geist-mono); */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +19,111 @@
   }
 }
 
+/* ====== GLOBAL PERFORMANCE OPTIMIZATIONS ====== */
+
+/* Smooth scroll for the whole page — native browser-level smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Prevent scroll chaining / overscroll bounce */
+  overscroll-behavior: none;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', 'Space Grotesk', Arial, Helvetica, sans-serif;
+}
+
+/* Reduce motion for users who prefer it — accessibility + perf */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ====== HERO SECTION ANIMATIONS ====== */
+/* All use translate3d(0) to force GPU compositing layer — no layout thrashing */
+
+.hero-section {
+  transition: background-color 0.7s ease;
+}
+.hero-light {
+  background-color: #F2F2F2;
+}
+.hero-dark {
+  background-color: #0A0A0A;
+}
+
+/* Fade transition for elements when dark mode toggles */
+.hero-fade-element {
+  transition: opacity 0.5s ease;
+}
+
+/* Dark mode overlay */
+.hero-dark-overlay {
+  transition: opacity 1s ease;
+}
+
+/* Phone scroll animation — GPU-accelerated with translate3d */
+@keyframes heroPhoneScroll {
+  0% { transform: translate3d(0, 0, 0); }
+  20% { transform: translate3d(0, -25%, 0); }
+  40% { transform: translate3d(0, -50%, 0); }
+  60% { transform: translate3d(0, -75%, 0); }
+  80% { transform: translate3d(0, -50%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+.hero-phone-scroll {
+  animation: heroPhoneScroll 12s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Float animations — GPU-accelerated, using translate3d */
+@keyframes heroFloat1 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -8px, 0); }
+}
+@keyframes heroFloat2 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -12px, 0); }
+}
+@keyframes heroFloat3 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -6px, 0); }
+}
+@keyframes heroFloat4 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -10px, 0); }
+}
+
+.hero-float-1 {
+  animation: heroFloat1 4s ease-in-out infinite;
+  will-change: transform;
+}
+.hero-float-2 {
+  animation: heroFloat2 5s ease-in-out infinite 0.5s;
+  will-change: transform;
+}
+.hero-float-3 {
+  animation: heroFloat3 3.5s ease-in-out infinite 1s;
+  will-change: transform;
+}
+.hero-float-4 {
+  animation: heroFloat4 4.5s ease-in-out infinite 1.5s;
+  will-change: transform;
+}
+
+/* Hero cards — smooth hover with GPU compositing */
+.hero-card {
+  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hero-card:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }

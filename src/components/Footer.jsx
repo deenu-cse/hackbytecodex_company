@@ -1,0 +1,247 @@
+'use client';
+import React from 'react';
+import Link from 'next/link';
+
+const Footer = () => {
+    const currentYear = new Date().getFullYear();
+
+    const WHATSAPP_NUMBER = '916378837030';
+    const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}`;
+
+    const navLinks = [
+        { label: 'Home', href: '/' },
+        { label: 'About', href: '/about' },
+        { label: 'Contact', href: '/contact' },
+    ];
+
+    const serviceLinks = [
+        { label: 'Web Development', href: '/contact' },
+        { label: 'App Development', href: '/contact' },
+        { label: 'E-Commerce', href: '/contact' },
+        { label: 'Deployment & DevOps', href: '/contact' },
+        { label: 'Maintenance & Support', href: '/contact' },
+    ];
+
+    const socials = [
+        {
+            label: 'WhatsApp',
+            href: whatsappLink,
+            icon: (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                    <path d="M12.004 2c-5.514 0-9.986 4.472-9.986 9.986 0 1.76.462 3.483 1.34 5.001L2 22l5.148-1.35a9.955 9.955 0 004.856 1.237h.004c5.514 0 9.986-4.472 9.986-9.986C21.994 6.472 17.518 2 12.004 2zm0 18.152h-.003a8.16 8.16 0 01-4.158-1.14l-.298-.177-3.056.801.816-2.98-.194-.306a8.148 8.148 0 01-1.256-4.364c0-4.508 3.67-8.178 8.183-8.178 2.187 0 4.24.852 5.786 2.399a8.128 8.128 0 012.396 5.788c0 4.508-3.67 8.157-8.216 8.157z" />
+                </svg>
+            ),
+        },
+        {
+            label: 'LinkedIn',
+            href: 'https://www.linkedin.com/in/deendayal-verma-1a8432290',
+            icon: (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+            ),
+        },
+        {
+            label: 'Instagram',
+            href: 'https://instagram.com',
+            icon: (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                </svg>
+            ),
+        },
+        {
+            label: 'GitHub',
+            href: 'https://github.com/deenu-cse',
+            icon: (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
+            ),
+        },
+    ];
+
+    return (
+        <footer className="relative w-full bg-black overflow-hidden" style={{ fontFamily: "'Inter', 'Space Grotesk', sans-serif" }}>
+            {/* Top gradient divider */}
+            <div className="h-px w-full" style={{ background: 'linear-gradient(90deg, transparent, rgba(192,132,252,0.4) 30%, rgba(232,255,71,0.4) 70%, transparent)' }} />
+
+            {/* Ambient glow blobs */}
+            <div className="absolute top-0 left-1/4 w-[400px] h-[400px] rounded-full opacity-[0.06] pointer-events-none" style={{ background: 'radial-gradient(circle, #C084FC, transparent 70%)' }} />
+            <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full opacity-[0.06] pointer-events-none" style={{ background: 'radial-gradient(circle, #E8FF47, transparent 70%)' }} />
+
+            <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-10">
+
+                {/* ===== MAIN FOOTER GRID ===== */}
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 pt-16 pb-14">
+
+                    {/* Brand Column */}
+                    <div className="md:col-span-5">
+                        <Link href="/" className="inline-flex items-center gap-3 group mb-5">
+                            <div
+                                className="w-10 h-10 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                                style={{
+                                    background: 'linear-gradient(145deg, rgba(192,132,252,0.2), rgba(232,255,71,0.1))',
+                                    border: '1px solid rgba(192,132,252,0.25)',
+                                }}
+                            >
+                                <svg width="18" height="18" viewBox="0 0 44 44" fill="none">
+                                    <path d="M14 8L30 16L22 32L6 24L14 8Z" fill="#C084FC" />
+                                    <path d="M22 4L38 12L30 28L14 20L22 4Z" fill="#A855F7" opacity="0.8" />
+                                </svg>
+                            </div>
+                            <span className="font-['Space_Grotesk'] font-black text-white text-lg tracking-tight">
+                                HacByte<span style={{ color: '#E8FF47' }}>Codex</span>
+                            </span>
+                        </Link>
+
+                        <p className="text-white/35 text-sm leading-relaxed font-light max-w-sm mb-6">
+                            Full-stack digital studio building web apps, mobile apps & secure government-grade software. From MVP to production — shipped in weeks, not months.
+                        </p>
+
+                        {/* CTA mini button */}
+                        <Link
+                            href="/contact"
+                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold text-black transition-all duration-300 hover:scale-105"
+                            style={{ background: 'linear-gradient(135deg, #C084FC, #E8FF47)' }}
+                        >
+                            Start a Project
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </Link>
+                    </div>
+
+                    {/* Navigation Column */}
+                    <div className="md:col-span-2">
+                        <h4 className="font-['Space_Grotesk'] font-bold text-white text-xs uppercase tracking-[0.15em] mb-5">Navigate</h4>
+                        <ul className="space-y-3">
+                            {navLinks.map((link) => (
+                                <li key={link.label}>
+                                    <Link
+                                        href={link.href}
+                                        className="text-white/40 text-sm font-light transition-colors duration-300 hover:text-white inline-flex items-center gap-1.5 group"
+                                    >
+                                        <span
+                                            className="w-0 h-px transition-all duration-300 group-hover:w-3"
+                                            style={{ background: '#C084FC' }}
+                                        />
+                                        {link.label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Services Column */}
+                    <div className="md:col-span-3">
+                        <h4 className="font-['Space_Grotesk'] font-bold text-white text-xs uppercase tracking-[0.15em] mb-5">Services</h4>
+                        <ul className="space-y-3">
+                            {serviceLinks.map((link) => (
+                                <li key={link.label}>
+                                    <Link
+                                        href={link.href}
+                                        className="text-white/40 text-sm font-light transition-colors duration-300 hover:text-white inline-flex items-center gap-1.5 group"
+                                    >
+                                        <span
+                                            className="w-0 h-px transition-all duration-300 group-hover:w-3"
+                                            style={{ background: '#E8FF47' }}
+                                        />
+                                        {link.label}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Contact Column */}
+                    <div className="md:col-span-2">
+                        <h4 className="font-['Space_Grotesk'] font-bold text-white text-xs uppercase tracking-[0.15em] mb-5">Get in Touch</h4>
+
+                        <div className="space-y-4">
+                            <a
+                                href={whatsappLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2.5 text-white/40 text-sm font-light transition-colors duration-300 hover:text-white group"
+                            >
+                                <div
+                                    className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-110"
+                                    style={{ background: 'rgba(37, 211, 102, 0.1)', color: '#25D366' }}
+                                >
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                                    </svg>
+                                </div>
+                                WhatsApp
+                            </a>
+
+                            <div className="flex items-start gap-2.5 text-white/40 text-sm font-light">
+                                <div
+                                    className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
+                                    style={{ background: 'rgba(192,132,252,0.1)', color: '#C084FC' }}
+                                >
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </div>
+                                <span className="leading-relaxed">
+                                    Haridwar,<br />
+                                    Uttarakhand, India
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* ===== BOTTOM BAR ===== */}
+                <div
+                    className="flex flex-col md:flex-row items-center justify-between gap-5 py-7"
+                    style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+                >
+                    {/* Copyright */}
+                    <p className="text-white/25 text-xs font-light text-center md:text-left">
+                        © {currentYear} HacByteCodex. All rights reserved.
+                    </p>
+
+                    {/* Social icons */}
+                    <div className="flex items-center gap-2">
+                        {socials.map((s) => (
+                            <a
+                                key={s.label}
+                                href={s.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={s.label}
+                                className="w-9 h-9 rounded-xl flex items-center justify-center text-white/30 transition-all duration-300 hover:text-white hover:scale-110"
+                                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}
+                            >
+                                {s.icon}
+                            </a>
+                        ))}
+                    </div>
+
+                    {/* Back to top */}
+                    <button
+                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                        className="group flex items-center gap-2 text-white/25 text-xs font-light transition-colors duration-300 hover:text-white/60 cursor-pointer"
+                    >
+                        Back to top
+                        <div
+                            className="w-7 h-7 rounded-lg flex items-center justify-center transition-all duration-300 group-hover:-translate-y-0.5 group-hover:scale-110"
+                            style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+                        >
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </footer>
+    );
+};
+
+export default Footer;
