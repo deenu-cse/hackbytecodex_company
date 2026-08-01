@@ -3,15 +3,16 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 const ExplorePage = () => {
-    const [visible, setVisible] = useState({});
-    const [cardFx, setCardFx] = useState({});
+    const [visible, setVisible] = useState<Record<string, boolean>>({});
+    const [cardFx, setCardFx] = useState<Record<string, { rotateX: number; rotateY: number; glowX: number; glowY: number; active: boolean }>>({});
 
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
-                    if (entry.isIntersecting && entry.target.dataset.id) {
-                        setVisible((prev) => (prev[entry.target.dataset.id] ? prev : { ...prev, [entry.target.dataset.id]: true }));
+                    if (entry.isIntersecting && entry.target instanceof HTMLElement && entry.target.dataset.id) {
+                        const id = entry.target.dataset.id;
+                        setVisible((prev) => (prev[id] ? prev : { ...prev, [id]: true }));
                     }
                 });
             },
@@ -26,7 +27,7 @@ const ExplorePage = () => {
         };
     }, []);
 
-    const handleMouseMove = (e, id) => {
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>, id: string) => {
         const card = e.currentTarget;
         const rect = card.getBoundingClientRect();
         const px = (e.clientX - rect.left) / rect.width;
@@ -36,7 +37,7 @@ const ExplorePage = () => {
             [id]: { rotateX: (0.5 - py) * 8, rotateY: (px - 0.5) * 8, glowX: px * 100, glowY: py * 100, active: true },
         }));
     };
-    const handleMouseLeave = (id) => {
+    const handleMouseLeave = (id: string) => {
         setCardFx((prev) => ({ ...prev, [id]: { rotateX: 0, rotateY: 0, glowX: 50, glowY: 50, active: false } }));
     };
 
