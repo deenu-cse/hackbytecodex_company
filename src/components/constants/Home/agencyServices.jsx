@@ -152,7 +152,7 @@ const WebAppDevSection = () => {
     ];
 
     return (
-        <section ref={sectionRef} className="relative w-full bg-black overflow-hidden py-24 px-4 md:px-8 lg:px-16">
+        <section id="expertise" ref={sectionRef} className="relative w-full bg-black overflow-hidden py-24 px-4 md:px-8 lg:px-16">
             <div className="absolute inset-0 pointer-events-none z-0 opacity-[0.04]">
                 <div
                     className="w-full h-full"

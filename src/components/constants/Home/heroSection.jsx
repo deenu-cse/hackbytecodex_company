@@ -31,6 +31,7 @@ const HeroSection = () => {
 
     return (
         <section
+            id="hero"
             ref={heroRef}
             className={`hero-section relative w-full min-h-screen overflow-hidden ${isDark ? 'hero-dark' : 'hero-light'}`}
         >

@@ -71,7 +71,7 @@ const GovernmentWorkSection = () => {
     ];
 
     return (
-        <section ref={sectionRef} className="relative w-full bg-black overflow-hidden py-24 px-4 md:px-8 lg:px-16">
+        <section id="certified-work" ref={sectionRef} className="relative w-full bg-black overflow-hidden py-24 px-4 md:px-8 lg:px-16">
             {/* grid background — consistent with rest of site */}
             <div className="absolute inset-0 pointer-events-none z-0 opacity-[0.04]">
                 <div

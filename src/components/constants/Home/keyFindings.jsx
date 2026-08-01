@@ -74,6 +74,7 @@ const KeyFindings = () => {
 
     return (
         <section
+            id="insights"
             ref={sectionRef}
             className="relative w-full bg-black overflow-hidden py-16 md:py-24"
         >

@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 
 const ServiceHero = () => {
@@ -248,20 +249,33 @@ const ServiceHero = () => {
     ];
 
     return (
-        <section className="relative w-full min-h-screen bg-black overflow-hidden flex flex-col items-center justify-center py-10">
+        <section id="services" className="relative w-full min-h-screen bg-black overflow-hidden flex flex-col items-center justify-center py-10">
             <canvas ref={canvasRef} className="absolute inset-0 z-0" style={{ willChange: 'auto' }} />
 
             <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-6xl px-6">
 
 
                 <h1 className="font-['Space_Grotesk'] text-4xl md:text-6xl lg:text-7xl font-black text-white text-center leading-tight tracking-tight mb-4">
-                    Digital <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, #C084FC, #E8FF47)' }}>Solutions</span>
+                    Haridwar Digital <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, #C084FC, #E8FF47)' }}>Solutions</span>
                 </h1>
 
-                <p className="text-white/40 text-center text-base md:text-lg font-light max-w-xl mb-12 leading-relaxed">
+                <p className="text-white/40 text-center text-base md:text-lg font-light max-w-xl mb-8 leading-relaxed">
                     We build, deploy & maintain your digital presence end-to-end. From idea to app store.
                 </p>
-
+                <div className="flex flex-col items-center justify-center gap-4 mb-12 sm:flex-row">
+                    <Link
+                        href="/explore"
+                        className="inline-flex cursor-pointer items-center justify-center rounded-full bg-gradient-to-r from-[#C084FC] via-[#60A5FA] to-[#E8FF47] px-8 py-3 text-sm font-semibold text-black transition duration-300 hover:brightness-110"
+                    >
+                        Explore digital solutions
+                    </Link>
+                    <Link
+                        href="/contact"
+                        className="inline-flex cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/5 px-8 py-3 text-sm font-semibold text-white transition duration-300 hover:border-white/20 hover:bg-white/10"
+                    >
+                        Talk to us
+                    </Link>
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 w-full mb-12">
                     {services.map((service, index) => (
                         <div
@@ -270,7 +284,6 @@ const ServiceHero = () => {
                             onMouseEnter={() => setHoveredService(service.id)}
                             onMouseLeave={() => setHoveredService(null)}
                         >
-                            {/* Card glow on hover — CSS transition only */}
                             <div
                                 className="absolute inset-0 rounded-2xl blur-xl transition-opacity duration-500"
                                 style={{

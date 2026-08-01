@@ -169,7 +169,7 @@ const LandingPage = () => {
 
     return (
         <div className="w-full bg-black" style={{ fontFamily: "'Inter', 'Space Grotesk', sans-serif" }}>
-            <section className="relative w-full min-h-screen overflow-hidden px-4 md:px-8 lg:px-16 pt-6 pb-12 bg-black">
+            <section id="approach" className="relative w-full min-h-screen overflow-hidden px-4 md:px-8 lg:px-16 pt-6 pb-12 bg-black">
                 <div className="absolute inset-0 pointer-events-none z-0 opacity-[0.04]">
                     <div
                         className="w-full h-full"
