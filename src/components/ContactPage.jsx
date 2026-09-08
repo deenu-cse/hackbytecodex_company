@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 const ContactPage = () => {
     const [openFaq, setOpenFaq] = useState(0);
-    const WHATSAPP_NUMBER = '86079595578';
+    const WHATSAPP_NUMBER = '918679595578';
     const WHATSAPP_MESSAGE = encodeURIComponent(
         "Hi! I'd like to start a project with you. Here's a bit about what I need: "
     );

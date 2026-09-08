@@ -5,7 +5,7 @@ import Link from 'next/link';
 const Footer = () => {
     const currentYear = new Date().getFullYear();
 
-    const WHATSAPP_NUMBER = '86079595578';
+    const WHATSAPP_NUMBER = '918679595578';
     const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}`;
 
     const navLinks = [
